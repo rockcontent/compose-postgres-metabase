@@ -15,7 +15,7 @@ However, it is difficult to retrieve this data once the application crushes (whi
 |[Docker](https://docs.docker.com/) | metabase and postgres run in different Docker containers|
 |[Docker Compose](https://docs.docker.com/compose/) | Docker compose netwroks the different Docker containers to allow them  work together as dependent services |
 |[Metabase](https://www.metabase.com/)| SQL based Analysis and Visualization program for any database |
-| [Postgres](https://www.postgresql.org/) | A database engine that stores relational data in a persistent way |
+|[Postgres](https://www.postgresql.org/)| A database engine that stores relational data in a persistent way |
 
 ## How to run
 
@@ -26,42 +26,34 @@ This assumes the local machine is running on Ubuntu
 3. Clone this git repository
 
     ```bash
-      git clone https://github.com/rockcontent/compose-postgres-metabase.git
+    git clone https://github.com/rockcontent/compose-postgres-metabase.git
     ```
 
 4. Enter the compose-postgres-metabase folder
 
     ```bash
-      cd compose-postgres-metabase
+    cd compose-postgres-metabase
     ```
 
-5. Convert ```.env.sample``` to ```.env```.
-6. Update the environment variables ```MB_DB_PASS```, ```MB_DB_HOST```, ```MB_ENCRYPTION_SECRET_KEY``` and save.
-
-    ```bash
-    MB_DB_PASS=<put_here_the_password_for_the_metabase_user>
-    # Make sure the firewall at the database server allows connections to port 54320
-    MB_DB_HOST=<put here the IP address for the Metabase database server e.g. 00.000.000.00>
-    MB_ENCRYPTION_SECRET_KEY=<Add a random string here as the secret>
-    ```
-
-7. Update the environment variables ```POSTGRES_PASSWORD```, ```METABASE_PASSWORD``` and save.
+5. Convert `.env.sample` to `.env`.
+6. Update the environment variables `POSTGRES_PASSWORD`, `METABASE_PASSWORD`, `MB_DB_PASS` and save.
 
     ```bash
     # Add the password for the postgres user
     POSTGRES_PASSWORD=<put here the_password for the postgres user>
     # Add the password for the metabase user
     METABASE_PASSWORD=<put here the password for the metabase user>
+    MB_DB_PASS=<put here the password for the metabase user>
     ```
 
-8. Start the docker compose services
+7. Start the docker compose services
 
     ```bash
-      sudo docker-compose up -d
+    sudo docker-compose up
     ```
 
-9. Set up your metabase instance by visiting the [local metabase start URL](http://localhost:3000)
-If you are on a server, use ```http://<server IP>:3000```.
+8. Set up your metabase instance by visiting the [local metabase start URL](http://localhost:3000)
+If you are on a server, use `http://<server IP>:3000`.
 
 ## Service - Port Mappings
 
