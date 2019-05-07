@@ -6,7 +6,6 @@ services:
   # Misc Storage
   postgres:
     container_name: "data-engine_postgres"
-    restart: "always"
     image: postgres
     env_file: .env
     volumes:
@@ -17,7 +16,6 @@ services:
 
   metabase:
     container_name: "data-engine_metabase"
-    restart: "always"
     image: metabase/metabase
     env_file: .env
     ports:
