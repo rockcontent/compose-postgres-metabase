@@ -26,7 +26,7 @@ This assumes the local machine is running on Ubuntu
 3. Clone this git repository
 
     ```bash
-      git clone https://github.com/Tinitto/compose-postgres-metabase.git
+      git clone https://github.com/rockcontent/compose-postgres-metabase.git
     ```
 
 4. Enter the compose-postgres-metabase folder
