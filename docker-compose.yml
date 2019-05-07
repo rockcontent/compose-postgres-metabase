@@ -1,6 +1,16 @@
 version: "3"
 
 services:
+  app:
+    container_name: "metabase-app"
+    image: metabase/metabase
+    env_file: .env
+    ports:
+      - 3000:3000
+    networks:
+      - net
+    depends_on:
+      - db
 
   db:
     container_name: "metabase-postgres"
@@ -13,17 +23,6 @@ services:
       - 3010:5432
     networks:
       - net
-
-  app:
-    container_name: "metabase-app"
-    image: metabase/metabase
-    env_file: .env
-    ports:
-      - 3000:3000
-    networks:
-      - net
-    depends_on:
-      - db
 
 volumes:
   postgres-data:
