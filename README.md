@@ -68,7 +68,7 @@ If you are on a server, use ```http://<server IP>:3000```.
 | Service | Port |
 | --- | --- |
 | Metabase | 3000 |
-| Postgres | 54320 |
+| Postgres | 3010 |
 
 ## Acknowledgement
 
