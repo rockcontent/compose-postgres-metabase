@@ -1,9 +1,7 @@
 version: "3"
 
-# All available services
 services:
 
-  # Misc Storage
   postgres:
     container_name: "data-engine_postgres"
     image: postgres
@@ -21,6 +19,5 @@ services:
     ports:
       - 3000:3000
 
-# Volumes to persist data
 volumes:
   postgres_volume:
