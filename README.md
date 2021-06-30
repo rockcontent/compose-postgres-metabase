@@ -19,10 +19,10 @@ However, it is difficult to retrieve this data once the application crushes (whi
 
 ## How to run
 
-This assumes the local machine is running on Ubuntu
+This assumes the local machine is running on Ubuntu or macOS.
 
-1. Ensure docker is installed. If it is not installed, install it. Here are [the instructions](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
-2. Ensure docker compose is installed on your system. If it is not installed, install it. Here are [the instructions](https://docs.docker.com/compose/install/).
+1. Ensure [Docker](https://docs.docker.com/get-docker/) is installed.
+2. Ensure [Docker Compose](https://docs.docker.com/compose/install/) is installed on your system.
 3. Clone this git repository
 
     ```bash
@@ -35,7 +35,12 @@ This assumes the local machine is running on Ubuntu
     cd compose-postgres-metabase
     ```
 
-5. Convert `.env.sample` to `.env`.
+5. Copy `.env.sample` to `.env`.
+
+    ```bash
+    cp .env.sample .env
+    ```
+
 6. Update the environment variables `POSTGRES_PASSWORD`, `METABASE_PASSWORD`, `MB_DB_PASS` and save.
 
     ```bash
@@ -49,19 +54,19 @@ This assumes the local machine is running on Ubuntu
 7. Start the docker compose services
 
     ```bash
-    sudo docker-compose up
+    docker compose up
     ```
 
 8. Set up your metabase instance by visiting the [local metabase start URL](http://localhost:3000)
-If you are on a server, use `http://<server IP>:3000`.
+If you are on a server or changed the port in your `.env`, use `http://<server IP>:<MB_HOST_APP_PORT>`.
 
 ## Service - Port Mappings
 
-| Service | Port |
-| --- | --- |
-| Metabase | 3000 |
-| Postgres | 3010 |
+| Service | Default Port | environment variable |
+| --- | --- | --- |
+| Metabase | 3000 | MB_HOST_APP_PORT |
+| Postgres | 3010 | MB_HOST_DB_PORT |
 
 ## Acknowledgement
 
-Some of the configuration was learnt from the [Beyond Jupyter](https://github.com/jgoerner/beyond-jupyter) talk by [Joshua Gorner](https://github.com/jgoerner)
+Configuration inspired by the [Beyond Jupyter](https://github.com/jgoerner/beyond-jupyter) talk by [Joshua Gorner](https://github.com/jgoerner).
