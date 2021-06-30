@@ -53,14 +53,14 @@ This assumes the local machine is running on Ubuntu
     ```
 
 8. Set up your metabase instance by visiting the [local metabase start URL](http://localhost:3000)
-If you are on a server, use `http://<server IP>:3000`.
+If you are on a server or changed the port in your `.env`, use `http://<server IP>:<MB_HOST_APP_PORT>`.
 
 ## Service - Port Mappings
 
-| Service | Port |
-| --- | --- |
-| Metabase | 3000 |
-| Postgres | 3010 |
+| Service | Default Port | environment variable |
+| --- | --- | --- |
+| Metabase | 3000 | MB_HOST_APP_PORT |
+| Postgres | 3010 | MB_HOST_DB_PORT |
 
 ## Acknowledgement
 
